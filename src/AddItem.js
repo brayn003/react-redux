@@ -9,12 +9,8 @@ class AddItem extends React.Component {
   }
 
   onChangeInput = (e) => {
+    console.log(e.target.value);
     this.setState({inputVal: e.target.value})
-  }
-
-  onClickButton = () => {
-    this.setState({ inputVal: ''})
-    this.props.onClickButton(this.state.inputVal);
   }
 
   render() {
@@ -27,9 +23,9 @@ class AddItem extends React.Component {
             placeholder="Basic usage"
             onChange={this.onChangeInput}
             value={this.state.inputVal}
+            // value="abcd"
           />
           <Button
-            onClick={this.onClickButton} 
             size="large"
             type="primary" 
             icon="arrow-right"

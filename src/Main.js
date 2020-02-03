@@ -7,20 +7,6 @@ import ItemList from './ItemList';
 const { Content } = Layout;
 
 class Main extends React.Component {
-  state = {
-    list: []
-  }
-
-  onClickButton = (val) => {
-    const {list} = this.state;
-    this.setState({
-      list: [
-        ...list,
-        val
-      ],
-    })
-  }
-
   render() {
     return (
       <Layout>
@@ -37,9 +23,7 @@ class Main extends React.Component {
               }} 
               span={12}
             >
-              <AddItem 
-                onClickButton={this.onClickButton} 
-              />
+              <AddItem />
             </Col>
             <Col 
               style={{
@@ -49,7 +33,7 @@ class Main extends React.Component {
               }} 
               span={12}
             >
-              <ItemList list={this.state.list} />
+              <ItemList />
             </Col>
           </Row>
         </Content>
